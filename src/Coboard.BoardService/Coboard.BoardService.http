@@ -1,0 +1,6 @@
+@Coboard.BoardService_HostAddress = http://localhost:5273
+
+GET {{Coboard.BoardService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

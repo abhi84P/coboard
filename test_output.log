@@ -1,0 +1,78 @@
+  Determining projects to restore...
+C:\Users\Arkbo\Personal\coboard\src\Coboard.BoardService\Coboard.BoardService.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc [C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\Coboard.ContractTests.csproj]
+C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\Coboard.ContractTests.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\Coboard.ContractTests.csproj : warning NU1903: Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q
+  All projects are up-to-date for restore.
+C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\Coboard.ContractTests.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\Coboard.ContractTests.csproj : warning NU1903: Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q
+C:\Users\Arkbo\Personal\coboard\src\Coboard.BoardService\Coboard.BoardService.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+  Coboard.BoardService -> C:\tmp\coboard-test-out\Coboard.BoardService.dll
+  Coboard.ContractTests -> C:\tmp\coboard-test-out\Coboard.ContractTests.dll
+Test run for C:\tmp\coboard-test-out\Coboard.ContractTests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.10)
+[xUnit.net 00:00:00.19]   Discovering: Coboard.ContractTests
+[xUnit.net 00:00:00.28]   Discovered:  Coboard.ContractTests
+[xUnit.net 00:00:00.33]   Starting:    Coboard.ContractTests
+  Passed Coboard.ContractTests.InterceptorLogicTests.InsertWithMultipleShapes_DoesNotThrowCollectionModified [2 s]
+[xUnit.net 00:00:03.67]     Coboard.ContractTests.InterceptorLogicTests.HardDeleteShape_ConvertsToSoftDeleteAndWritesHistory [FAIL]
+[xUnit.net 00:00:03.67]       Microsoft.EntityFrameworkCore.DbUpdateException : An error occurred while saving the entity changes. See the inner exception for details.
+[xUnit.net 00:00:03.67]       ---- Microsoft.Data.Sqlite.SqliteException : SQLite Error 19: 'NOT NULL constraint failed: shapes.x'.
+[xUnit.net 00:00:03.67]       Stack Trace:
+[xUnit.net 00:00:03.67]            at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]         C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\BoardDbContextIntegrationTests.cs(92,0): at Coboard.ContractTests.InterceptorLogicTests.HardDeleteShape_ConvertsToSoftDeleteAndWritesHistory()
+[xUnit.net 00:00:03.68]         C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\BoardDbContextIntegrationTests.cs(93,0): at Coboard.ContractTests.InterceptorLogicTests.HardDeleteShape_ConvertsToSoftDeleteAndWritesHistory()
+[xUnit.net 00:00:03.68]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.68]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.68]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:00:03.68]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:00:03.68]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:00:03.68]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]            at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.68]   Finished:    Coboard.ContractTests
+  Passed Coboard.ContractTests.InterceptorLogicTests.InsertShape_WritesInsertHistoryRow [594 ms]
+  Passed Coboard.ContractTests.InterceptorLogicTests.TagsReorder_IsDetectedAsChange [51 ms]
+  Failed Coboard.ContractTests.InterceptorLogicTests.HardDeleteShape_ConvertsToSoftDeleteAndWritesHistory [118 ms]
+  Error Message:
+   Microsoft.EntityFrameworkCore.DbUpdateException : An error occurred while saving the entity changes. See the inner exception for details.
+---- Microsoft.Data.Sqlite.SqliteException : SQLite Error 19: 'NOT NULL constraint failed: shapes.x'.
+  Stack Trace:
+     at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Coboard.ContractTests.InterceptorLogicTests.HardDeleteShape_ConvertsToSoftDeleteAndWritesHistory() in C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\BoardDbContextIntegrationTests.cs:line 92
+   at Coboard.ContractTests.InterceptorLogicTests.HardDeleteShape_ConvertsToSoftDeleteAndWritesHistory() in C:\Users\Arkbo\Personal\coboard\tests\Coboard.ContractTests\BoardDbContextIntegrationTests.cs:line 93
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+
+Test Run Failed.
+Total tests: 4
+     Passed: 3
+     Failed: 1
+ Total time: 4.6228 Seconds
+EXIT=1

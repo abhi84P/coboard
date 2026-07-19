@@ -1,0 +1,6 @@
+@Coboard.PresenceService_HostAddress = http://localhost:5186
+
+GET {{Coboard.PresenceService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Coboard.AuthService/Coboard.AuthService.csproj" />
+    <Project Path="src/Coboard.BoardService/Coboard.BoardService.csproj" />
+    <Project Path="src/Coboard.PresenceService/Coboard.PresenceService.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Coboard.ContractTests/Coboard.ContractTests.csproj" />
+  </Folder>
+</Solution>
